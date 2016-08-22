@@ -31,3 +31,22 @@
 */
 
 // YOUR CODE HERE
+
+function letterCount(string) {
+  var obj = {};
+  for (i=0; i < string.length; i++) {
+    var letter = string[i];
+
+    if (!(letter in obj)) {
+    var count = 1;
+
+    for (var j=i+1; j < string.length; j++) {
+      if (string[j] === letter) {
+        count++;
+      }
+    }
+     obj[letter] = count;
+  }
+}
+  return obj;
+}
