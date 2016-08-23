@@ -34,3 +34,13 @@
 */
 
 // YOUR CODE HERE
+function daysUntilDate(dob) {
+  var today = new Date();
+  var dob = new Date(dob);
+
+
+}
+
+function birthdayReminder() {
+
+}

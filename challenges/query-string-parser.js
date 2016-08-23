@@ -45,3 +45,13 @@
 */
 
 // YOUR CODE HERE
+function parseQueryString(string) {
+  var obj = {};
+  stringArray = string.split("&");
+    for(var i=0; i < stringArray.length; i++) {
+      var key = stringArray[i].substring(0, stringArray[i].indexOf("="));
+      var value = stringArray[i].substring(stringArray[i].indexOf("=") + 1);
+      obj[key] = value;
+    }
+     return obj;
+}

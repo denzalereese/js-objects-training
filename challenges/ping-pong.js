@@ -38,3 +38,39 @@
 */
 
 // YOUR CODE HERE
+function pingPong(arr) {
+  var backwards;
+  for (i=0; i < arr.length; i++) {
+    if(arr[i] != null && "goingBackwards" in arr[i]) {
+      backwards = arr[i].goingBackwards;
+    }
+
+    if ((arr[i] != null && i == arr.length-1 || arr[i] != null && backwards) && arr.indexOf(arr[i]) != 0) {
+      arr[i].steps -= 1;
+      arr[i-1] = arr[i];
+      arr[i] = null;
+      arr[i-1].goingBackwards = true;
+      backwards = arr[i-1].goingBackwards;
+      return arr;
+    }
+  }
+
+  for (i=0; i < arr.length-1; i++) {
+    if (arr[i] != null) {
+      arr[i].steps += 1;
+      arr[i+1] = arr[i];
+      arr[i] = null;
+      arr[i+1].goingBackwards = false;
+      backwards = arr[i+1].goingBackwards;
+      return arr;
+    }
+  }
+}
+
+
+
+
+
+
+
+
